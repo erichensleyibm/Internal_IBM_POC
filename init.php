@@ -36,12 +36,15 @@ if ($mysqli->query($sqlTable)) {
 
 echo "Executing CREATE TABLE Query...<br>";
 $sqlTable="
-CREATE TABLE MESSAGES_TABLE (
- ID bigint(20) NOT NULL AUTO_INCREMENT,
- TIME TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
- MESSAGE varchar(255) DEFAULT NULL,
- PRIMARY KEY (ID)
-) DEFAULT CHARSET=utf8
+CREATE TABLE `messages_table` (
+`Name` VARCHAR(45) NOT NULL,
+`Office` VARCHAR(30) NOT NULL,
+`Sector` VARCHAR(30) NOT NULL,
+`Current Project` VARCHAR(70) NOT NULL,
+`Interest` VARCHAR(70) NOT NULL,
+`Contact_Info` VARCHAR(70) NOT NULL,
+Primary Key (`Name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
 ";
 
 if ($mysqli->query($sqlTable)) {
