@@ -20,7 +20,10 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") { //if new message is being added
     $cleaned_message = preg_replace('/[^a-zA-Z0-9.\s]/', '', $_POST["message"]); //remove invalid chars from input.
-    $strsq0 = "INSERT INTO MESSAGES_TABLE ( MESSAGE) VALUES ('" . $cleaned_message . "');"; //query to insert new message
+    echo "<script type='text/javascript'>alert('$cleaned_message');</script>";
+    echo "<script type='text/javascript'>alert('"INSERT INTO MESSAGES_TABLE ( NAME) VALUES ('" . $cleaned_message . "');"');</script>";
+
+    $strsq0 = "INSERT INTO MESSAGES_TABLE ( NAME) VALUES ('" . $cleaned_message . "');"; //query to insert new message
     echo "<script type='text/javascript'>alert('$strsq0');</script>";
 
     if ($mysqli->query($strsq0)) {
