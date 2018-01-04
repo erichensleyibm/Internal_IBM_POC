@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { //if new message is being added
 }
 
 //Query the DB for messages
-$strsql = "select * from MESSAGES_TABLE ORDER BY ID DESC limit 100";
+$strsql = "select * from MESSAGES_TABLE limit 100";
 if ($result = $mysqli->query($strsql)) {
    // printf("<br>Select returned %d rows.\n", $result->num_rows);
 } else {
