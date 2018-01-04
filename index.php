@@ -20,10 +20,9 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") { //if new message is being added
     $cleaned_message = preg_replace('/[^a-zA-Z0-9.\s]/', '', $_POST["message"]); //remove invalid chars from input.
-    echo "<script type='text/javascript'>alert('$cleaned_message');</script>";
-    echo "<script type='text/javascript'>alert('"INSERT INTO MESSAGES_TABLE ( NAME) VALUES ('" . $cleaned_message . "');"');</script>";
 
-    $strsq0 = "INSERT INTO MESSAGES_TABLE ( NAME) VALUES ('" . $cleaned_message . "');"; //query to insert new message
+    $strsq0 = "INSERT INTO MESSAGES_TABLE ( NAME) VALUES ('" . $cleaned_message .
+"');"; //query to insert new message
     echo "<script type='text/javascript'>alert('$strsq0');</script>";
 
     if ($mysqli->query($strsq0)) {
@@ -59,7 +58,7 @@ if ($result = $mysqli->query($strsql)) {
     <div class="">
         <img class="newappIcon" src="images/newapp-icon.png" />
         <h1>
-					Welcome to the <span class="blue">Consulting By Degrees </span> Information Center
+					Welcome to the <span class="blue">Consulting By Degrees </span> Information Center. 
 				</h1>
         <p class="description">This page will allow you to share your current project, view others' and foster networking.  <br>
 
