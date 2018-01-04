@@ -20,7 +20,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>PHP MySQL Sample Application</title>
+    <title>Internal CBD POC</title>
     <link rel="stylesheet" href="style.css" />
 </head>
 

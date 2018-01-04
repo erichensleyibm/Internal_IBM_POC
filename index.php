@@ -43,7 +43,7 @@ if ($result = $mysqli->query($strsql)) {
 <html>
 
 <head>
-    <title>PHP MySQL Sample Application</title>
+    <title>Internal CBD POC</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -54,9 +54,9 @@ if ($result = $mysqli->query($strsql)) {
     <div class="">
         <img class="newappIcon" src="images/newapp-icon.png" />
         <h1>
-					Welcome to the <span class="blue">PHP MySQL Sample</span> on Bluemix!
+					Welcome to the <span class="blue">Consulting By Degrees </span> Information Center
 				</h1>
-        <p class="description">This introductory sample allows you to insert messages into a MySQL database. <br>
+        <p class="description">This page will allow you to share your current project, view others' and foster networking.  <br>
 
 
             <input type="button" class = "mybutton" onclick="window.location = 'init.php';" class="btn" value="(Re-)Create table"></input></p>
