@@ -54,8 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
 }
 
-if ($nameErr == $officeErr == $sectorErr == $projectErr = "") { //if new message is being added
-   $all = 1;
+
 }
 
 function test_input($data) {
