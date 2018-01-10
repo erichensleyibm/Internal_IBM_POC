@@ -11,16 +11,10 @@
 <?php include 'db.php';?>
 
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") { //if new message is being added
-    echo $name;
-}
-?>
-
-
-<?php
 // define variables and set to empty values
 $nameErr = $officeErr = $sectorErr = $projectErr = "";
 $name = $office = $sector = $project;
+$all = '';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (empty($_POST["name"])) {
@@ -60,6 +54,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
 }
 
+if ($nameErr == $officeErr == $sectorErr == $projectErr = "") { //if new message is being added
+   $all = 1;
+}
+
 function test_input($data) {
   $data = trim($data);
   $data = stripslashes($data);
@@ -94,6 +92,8 @@ echo "<br>";
 echo $sector;
 echo "<br>";
 echo $project;
+echo "<br>";
+echo $all;
 ?>
 
 </body>
