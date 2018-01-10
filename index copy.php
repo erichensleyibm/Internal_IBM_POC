@@ -18,6 +18,20 @@
 
 <?php include 'db.php';?>
 <?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") { //if new message is being added
+    $cleaned_message = preg_replace('/[^a-zA-Z0-9.\s]/', '', $_POST["message"]); //remove invalid chars from input.
+
+    $strsq0 = "INSERT INTO MESSAGES_TABLE ( NAME) VALUES ('" . $cleaned_message .
+"');"; //query to insert new message
+    echo "<script type='text/javascript'>alert('$strsq0');</script>";
+
+    if ($mysqli->query($strsq0)) {
+        //echo "Insert success!";
+    } else {
+        echo "Cannot insert into the data table; check whether the table is created, or the database is active. "  . mysqli_error();
+    }
+}
+
 //Query the DB for messages
 $strsql = "select * from MESSAGES_TABLE limit 100";
 if ($result = $mysqli->query($strsql)) {
@@ -80,6 +94,15 @@ if ($result = $mysqli->query($strsql)) {
             mysqli_close();
         ?>
         <tr>
+            <form method = "POST"> <!--FORM: will submit to same page (index.php), and if ($_SERVER["REQUEST_METHOD"] == "POST") will catch it --> 
+                <td colspan = "2">
+                <input type = "text" style = "width:100%" name = "message" autofocus onchange="saveChange(this)" onkeydown="onKey(event)"></input>
+                </td>
+                <td>
+                    <button class = "mybutton" type = "submit">Add New Message</button><td></tr>
+
+                </td> 
+            </form>
         </tr>
         </tbody>
     </table>
