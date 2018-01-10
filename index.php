@@ -61,7 +61,7 @@ if ($allErr == 0) { //if new message is being added
    if ($mysqli->query($sql)) {
        //echo "Insert success!";
    } else {
-       echo "Cannot insert into the data table; check whether the table is created, or the database is active. "  . mysqli_error();
+       echo "Cannot insert data.  If you have previously submitted this information, please follow the link to the next page. "  . mysqli_error();
    }     
 }
 
@@ -74,6 +74,9 @@ function test_input($data) {
 ?>
 
 <h2>CBD Survey</h2>
+	<br>
+            <input type="button" class = "mybutton" onclick="window.location = 'datatable.php';" class="btn" value="Continue Without Submitting "></input>
+        </br>
 <p><span class="error">* required field.</span></p>
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
   Name: <input type="text" name="name" value="<?php echo $name;?>">
