@@ -21,11 +21,12 @@
 //Query the DB for messages
 $strsql = "select * from MESSAGES_TABLE limit 100";
 if ($result = $mysqli->query($strsql)) {
-   // printf("<br>Select returned %d rows.\n", $result->num_rows);
-} else {
-        //Could be many reasons, but most likely the table isn't created yet. init.php will create the table.
-        echo "<b>Can't query the database, did you <a href = init.php>Create the table</a> yet?</b>";
-    }
+   printf("<br>Select returned %d rows.\n", $result->num_rows);
+}
+//else {
+//        //Could be many reasons, but most likely the table isn't created yet. init.php will create the table.
+//        echo "<b>Can't query the database, did you <a href = init.php>Create the table</a> yet?</b>";
+//    }
 ?>
 
 

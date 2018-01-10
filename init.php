@@ -41,8 +41,6 @@ CREATE TABLE `messages_table` (
 `Office` VARCHAR(30) NOT NULL,
 `Sector` VARCHAR(30) NOT NULL,
 `Current Project` VARCHAR(70) NOT NULL,
-`Interest` VARCHAR(70) NOT NULL,
-`Contact_Info` VARCHAR(70) NOT NULL,
 Primary Key (`Name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8
 ";
