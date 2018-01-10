@@ -90,7 +90,7 @@ function test_input($data) {
   <br><br>
   Project: <textarea name="project" rows="5" cols="40"><?php echo $project;?></textarea>  <span class="error">* <?php echo $projectErr;?></span>
   <br><br>
-  <input type="submit" name="submit" value="Submit">  
+  <input type="submit" onclick="window.location = 'datatable.php';" name="submit" value="Submit">  
 </form>
 
 <?php
@@ -103,7 +103,6 @@ echo $sector;
 echo "<br>";
 echo $project;
 echo "<br>";
-echo $sql;
 ?>
 
 </body>
