@@ -10,6 +10,12 @@
 
 <?php include 'db.php';?>
 
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> parent of 90114e8... n
 <?php
 // define variables and set to empty values
 $nameErr = $officeErr = $sectorErr = $projectErr = "";
