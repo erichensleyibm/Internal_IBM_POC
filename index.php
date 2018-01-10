@@ -56,7 +56,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 if ($allErr == 0) { //if new message is being added
-   $sql = "INSERT INTO MESSAGES_TABLE VALUES ('" . $cleaned_message . "');";
+   $sql = "INSERT INTO MESSAGES_TABLE VALUES ('" . $Name . ", " . $Office . ", " . $Sector . ", " . $Project . "');";
 }
 
 function test_input($data) {
@@ -79,7 +79,7 @@ function test_input($data) {
   Sector: <input type="text" name="sector" value="<?php echo $sector;?>">
   <span class="error">* <?php echo $sectorErr;?></span>
   <br><br>
-  Comment: <textarea name="project" rows="5" cols="40"><?php echo $project;?></textarea>  <span class="error">* <?php echo $projectErr;?></span>
+  Project: <textarea name="project" rows="5" cols="40"><?php echo $project;?></textarea>  <span class="error">* <?php echo $projectErr;?></span>
   <br><br>
   <input type="submit" name="submit" value="Submit">  
 </form>
