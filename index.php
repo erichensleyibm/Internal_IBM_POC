@@ -8,6 +8,7 @@
 </head>
 <body>  
 
+<?php include 'db.php';?>
 <?php
 // define variables and set to empty values
 $nameErr = $officeErr = $sectorErr = $projectErr = "";
