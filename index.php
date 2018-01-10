@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
   
   if (empty($_POST["start"])) {
-    $startErr = "Start month and year are required";
+    $startErr = "Start date is required";
     $allErr += 1;  
   } else {
     $start = test_input($_POST["start"]);
@@ -140,7 +140,7 @@ function test_input($data) {
   Name: <input type="text" name="name" value="<?php echo $name;?>">
   <span class="error">* <?php echo $nameErr;?></span>
   <br><br>
-  Start Month: <input type="text" name="start" value="<?php echo $start;?>">
+  Start Date (YYYY-MM-DD): <input type="text" name="start" value="<?php echo $start;?>">
   <span class="error">* <?php echo $startErr;?></span>
   <br><br>
   City: <input type="text" name="city" value="<?php echo $city;?>">
