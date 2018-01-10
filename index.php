@@ -28,24 +28,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $officeErr = "Office is required";
   } else {
     $office = test_input($_POST["office"]);
-    // check if e-mail address is well-formed
-    if (!filter_var($office, FILTER_VALIDATE_EMAIL)) {
-      $officeErr = "Invalid office format";
+    // check if name only contains letters and whitespace
+    if (!preg_match("/^[a-zA-Z ]*$/",$office)) {
+      $nameErr = "Only letters and white space allowed";
     }
   }
     
   if (empty($_POST["sector"])) {
-    $sector = "";
+    $sectorErr = "Sector is required";
   } else {
     $sector = test_input($_POST["sector"]);
-    // check if URL address syntax is valid (this regular expression also allows dashes in the URL)
-    if (!preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i",$sector)) {
-      $sectorErr = "Invalid Sector";
+    // check if name only contains letters and whitespace
+    if (!preg_match("/^[a-zA-Z ]*$/",$sector)) {
+      $sectorErr = "Only letters and white space allowed";
     }
   }
 
   if (empty($_POST["project"])) {
-    $project = "";
+    $projectErr = "Project is required";
   } else {
     $project = test_input($_POST["project"]);
   }
@@ -70,9 +70,10 @@ function test_input($data) {
   <span class="error">* <?php echo $officeErr;?></span>
   <br><br>
   Sector: <input type="text" name="sector" value="<?php echo $sector;?>">
-  <span class="error"><?php echo $sectorErr;?></span>
+  <span class="error">* <?php echo $sectorErr;?></span>
   <br><br>
   Project: <textarea name="project" rows="5" cols="40"><?php echo $project;?></textarea>
+  <span class="error">* <?php echo $projectErr;?></span>
   <br><br>
   <input type="submit" name="submit" value="Submit">  
 </form>
@@ -85,7 +86,7 @@ echo $office;
 echo "<br>";
 echo $website;
 echo "<br>";
-echo $comment;
+echo $project;
 echo "<br>";
 ?>
 
