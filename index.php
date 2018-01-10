@@ -57,6 +57,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 if ($allErr == 0) { //if new message is being added
    $sql = "INSERT INTO MESSAGES_TABLE VALUES ('" . $name . "', '" . $office . "', '" . $sector . "', '" . $project . "');";
+   echo "<script type='text/javascript'>alert('$sql');</script>";
+   if ($mysqli->query($sql)) {
+       //echo "Insert success!";
+   } else {
+       echo "Cannot insert into the data table; check whether the table is created, or the database is active. "  . mysqli_error();
+   }     
 }
 
 function test_input($data) {
@@ -67,7 +73,7 @@ function test_input($data) {
 }
 ?>
 
-<h2>PHP Form Validation Example</h2>
+<h2>CBD Survey</h2>
 <p><span class="error">* required field.</span></p>
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
   Name: <input type="text" name="name" value="<?php echo $name;?>">
