@@ -62,7 +62,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sectorErr = "Service line is required";
     $allErr += 1;  
   } else {
-    $service = test_input($_POST["sector"]);
+    $sector = test_input($_POST["sector"]);
     // check if name only contains letters and whitespace
     if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
       $sectorErr = "Only letters and white space allowed";
@@ -190,6 +190,7 @@ echo $side;
 echo "<br>";
 echo $skill;
 echo "<br>";
+echo $sql;
 ?>
 
 </body>
