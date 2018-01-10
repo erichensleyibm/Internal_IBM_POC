@@ -15,6 +15,7 @@
 $nameErr = $officeErr = $sectorErr = $projectErr = "";
 $name = $office = $sector = $project = "";
 $allErr = 0;
+$sql = "";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (empty($_POST["name"])) {
     $nameErr = "Name is required";
@@ -55,7 +56,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 if ($allErr == 0) { //if new message is being added
-   echo $allErr;
+   $sql = "INSERT INTO MESSAGES_TABLE VALUES ('" . $cleaned_message . "');";
 }
 
 function test_input($data) {
@@ -93,7 +94,7 @@ echo $sector;
 echo "<br>";
 echo $project;
 echo "<br>";
-echo $allErr;
+echo $sql;
 ?>
 
 </body>
