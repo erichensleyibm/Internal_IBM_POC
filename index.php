@@ -18,14 +18,8 @@
 
 <?php include 'db.php';?>
 <?php
-<<<<<<< HEAD
-// define variables and set to empty values
-$nameErr = $projectErr = $sectorErr = officeErr = "";
-$name = $project = $sector = $office = "";
-=======
 if ($_SERVER["REQUEST_METHOD"] == "POST") { //if new message is being added
     $cleaned_message = preg_replace('/[^a-zA-Z0-9.\s]/', '', $_POST["message"]); //remove invalid chars from input.
->>>>>>> parent of e50d274... survey
 
     $strsq0 = "INSERT INTO MESSAGES_TABLE ( NAME) VALUES ('" . $cleaned_message .
 "');"; //query to insert new message
@@ -68,20 +62,6 @@ if ($result = $mysqli->query($strsql)) {
 				</h1>
         <p class="description">This page will allow you to share your current project, view others' and foster networking.  <br>
 
-<<<<<<< HEAD
-<?php
-echo "<h2>Your Input:</h2>";
-echo $name;
-echo "<br>";
-echo $office;
-echo "<br>";
-echo $sector;
-echo "<br>";
-echo $comment;
-echo "<br>";
-?>
-=======
->>>>>>> parent of e50d274... survey
 
             <input type="button" class = "mybutton" onclick="window.location = 'init.php';" class="btn" value="(Re-)Create table"></input></p>
             </br>
@@ -119,7 +99,8 @@ echo "<br>";
                 <input type = "text" style = "width:100%" name = "message" autofocus onchange="saveChange(this)" onkeydown="onKey(event)"></input>
                 </td>
                 <td>
-                    <button class = "mybutton" type = "submit">Add New Message</button></td></tr>
+                    <button class = "mybutton" type = "submit">Add New Message</button><td></tr>
+
                 </td> 
             </form>
         </tr>
