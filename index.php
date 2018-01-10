@@ -7,11 +7,12 @@
 </style>
 </head>
 <body>  
+<?php include 'db.php';?>
 
 <?php
 // define variables and set to empty values
-$nameErr = $emailErr = $websiteErr = "";
-$name = $email = $comment = $website = "";
+$nameErr = $projectErr = $sectorErr = officeErr = "";
+$name = $project = $sector = $office = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (empty($_POST["name"])) {
@@ -84,11 +85,18 @@ echo $name;
 echo "<br>";
 echo $office;
 echo "<br>";
-echo $website;
+echo $sector;
 echo "<br>";
 echo $project;
 echo "<br>";
 ?>
+
+<?php
+if ($nameErr = $projectErr = $sectorErr = officeErr = "") {
+    echo $name
+}
+?>
+
 
 </body>
 </html>
