@@ -65,14 +65,13 @@ function test_input($data) {
   Name: <input type="text" name="name" value="<?php echo $name;?>">
   <span class="error">* <?php echo $nameErr;?></span>
   <br><br>
-  Name: <input type="text" name="office" value="<?php echo $office;?>">
+  Office: <input type="text" name="office" value="<?php echo $office;?>">
   <span class="error">* <?php echo $officeErr;?></span>
   <br><br>
-  Name: <input type="text" name="sector" value="<?php echo $sector;?>">
+  Sector: <input type="text" name="sector" value="<?php echo $sector;?>">
   <span class="error">* <?php echo $sectorErr;?></span>
   <br><br>
-  Name: <input type="text" name="project" value="<?php echo $project;?>">
-  <span class="error">* <?php echo $projectErr;?></span>
+  Comment: <textarea name="project" rows="5" cols="40"><?php echo $project;?></textarea>  <span class="error">* <?php echo $projectErr;?></span>
   <br><br>
   <input type="submit" name="submit" value="Submit">  
 </form>
