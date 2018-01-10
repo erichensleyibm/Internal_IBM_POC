@@ -7,7 +7,6 @@
 </style>
 </head>
 <body>  
-<?php include 'db.php';?>
 
 <?php
 // define variables and set to empty values
@@ -90,13 +89,6 @@ echo "<br>";
 echo $project;
 echo "<br>";
 ?>
-
-<?php
-if ($nameErr == $projectErr == $sectorErr == officeErr = "") {
-    echo $name;
-}
-?>
-
 
 </body>
 </html>
