@@ -56,7 +56,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 if ($allErr == 0) { //if new message is being added
-   $sql = "INSERT INTO MESSAGES_TABLE VALUES ('" . $name . ", " . $office . ", " . $sector . ", " . $project . "');";
+   $sql = "INSERT INTO MESSAGES_TABLE VALUES ('" . $name . "', '" . $office . "', '" . $sector . "', '" . $project . "');";
 }
 
 function test_input($data) {
