@@ -13,8 +13,8 @@
 <?php
 // define variables and set to empty values
 $nameErr = $officeErr = $sectorErr = $projectErr = "";
-$name = $office = $sector = $project;
-$all = '';
+$name = $office = $sector = $project = "";
+$all = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (empty($_POST["name"])) {
