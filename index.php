@@ -10,11 +10,7 @@
 
 <?php include 'db.php';?>
 
-<?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") { //if new message is being added
-    echo $name
-}
-?>
+
 
 
 <?php
