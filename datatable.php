@@ -48,11 +48,6 @@ if ($result = $mysqli->query($strsql)) {
 					Welcome to the <span class="blue">Consulting By Degrees </span> Information Center. 
 				</h1>
         <p class="description">This page will allow you to share your current project, view others' and foster networking.  <br>
-
-
-//            <input type="button" class = "mybutton" onclick="window.location = 'init.php';" class="btn" value="(Re-)Create table"></input></p>
-//            </br>
-
     
     <table id='notes' class='records'><tbody>
         

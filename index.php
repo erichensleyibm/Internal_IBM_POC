@@ -168,30 +168,5 @@ function test_input($data) {
   <input type="submit" onclick="window.location = 'datatable.php';" name="submit" value="Submit">  
 </form>
 
-<?php
-echo "<h2>Your Input:</h2>";
-echo $name;
-echo "<br>";
-echo $start;
-echo "<br>";
-echo $city;
-echo "<br>";
-echo $service;
-echo "<br>";
-echo $role;
-echo "<br>";
-echo $client;
-echo "<br>";
-echo $sector;
-echo "<br>";
-echo $project;
-echo "<br>";
-echo $side;
-echo "<br>";
-echo $skill;
-echo "<br>";
-echo $sql;
-?>
-
 </body>
 </html>
