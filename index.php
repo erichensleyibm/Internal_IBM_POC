@@ -29,14 +29,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
   
   if (empty($_POST["start"])) {
-    $startErr = "Start month is required";
+    $startErr = "Start month and year are required";
     $allErr += 1;  
   } else {
     $start = test_input($_POST["start"]);
-    // check if name only contains letters and whitespace
-    if (!preg_match("/^[a-zA-Z ]*$/",$start)) {
-      $startErr = "Only letters and white space allowed";
-    }
   }
   
   if (empty($_POST["city"])) {
@@ -62,19 +58,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
   
     
-    if (empty($_POST["service"])) {
-    $serviceErr = "Service line is required";
+    if (empty($_POST["sector"])) {
+    $sectorErr = "Service line is required";
     $allErr += 1;  
   } else {
-    $service = test_input($_POST["service"]);
+    $service = test_input($_POST["sector"]);
     // check if name only contains letters and whitespace
     if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
-      $serviceErr = "Only letters and white space allowed";
+      $sectorErr = "Only letters and white space allowed";
     }
   }
-  
-  
-  
   
   if (empty($_POST["role"])) {
     $roleErr = "Current role is required";
@@ -87,12 +80,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
   }
   
-  
   if (empty($_POST["client"])) {
     $clientErr = "Current client is required";
     $allErr += 1;  
   } else {
-    $service = test_input($_POST["client"]);
+    $client = test_input($_POST["client"]);
     // check if name only contains letters and whitespace
     if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
       $clientErr = "Only letters and white space allowed";
@@ -105,8 +97,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   } else {
     $project = test_input($_POST["project"]);
   }
-
-
 
   if (empty($_POST["side"])) {
     $sideErr = "Side work is required";
@@ -122,7 +112,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $skill = test_input($_POST["skill"]);
   }  
   
-
 if ($allErr == 0) { //if new message is being added
    $sql = "INSERT INTO MESSAGES_TABLE VALUES ('" . $name . "', '" . $start . "', '" . $city . "', '" . $service . "', '" . $sector . "', '" . $role . "', '" . $client . "', '" . $project . "', '" . $side .  "', '" . $skill . "');";
    echo "<script type='text/javascript'>alert('$sql');</script>";
