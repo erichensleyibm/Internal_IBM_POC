@@ -93,7 +93,7 @@ echo "<br>";
 
 <?php
 if ($nameErr = $projectErr = $sectorErr = officeErr = "") {
-    echo $name
+    echo $name;
 }
 ?>
 
