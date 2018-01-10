@@ -9,6 +9,14 @@
 <body>  
 
 <?php include 'db.php';?>
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") { //if new message is being added
+    echo $name
+}
+?>
+
+
 <?php
 // define variables and set to empty values
 $nameErr = $officeErr = $sectorErr = $projectErr = "";
