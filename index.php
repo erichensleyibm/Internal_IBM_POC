@@ -10,21 +10,15 @@
 
 <?php include 'db.php';?>
 
-<<<<<<< HEAD
-=======
-
-
-
->>>>>>> parent of 90114e8... n
 <?php
 // define variables and set to empty values
 $nameErr = $officeErr = $sectorErr = $projectErr = "";
 $name = $office = $sector = $project = "";
-$all = "";
-
+$allErr = 0;
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (empty($_POST["name"])) {
     $nameErr = "Name is required";
+    $allErr += 1;  
   } else {
     $name = test_input($_POST["name"]);
     // check if name only contains letters and whitespace
@@ -32,9 +26,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $nameErr = "Only letters and white space allowed";
     }
   }
-
   if (empty($_POST["office"])) {
     $officeErr = "Office is required";
+    $allErr += 1;  
   } else {
     $office = test_input($_POST["office"]);
     // check if name only contains letters and whitespace
@@ -42,9 +36,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $officeErr = "Only letters and white space allowed";
     }
   }
-
   if (empty($_POST["sector"])) {
     $sectorErr = "Sector is required";
+    $allErr += 1;  
   } else {
     $sector = test_input($_POST["sector"]);
     // check if name only contains letters and whitespace
@@ -52,15 +46,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $sectorErr = "Only letters and white space allowed";
     }
   }
-
   if (empty($_POST["project"])) {
     $projectErr = "Project is required";
+    $allErr += 1;  
   } else {
     $project = test_input($_POST["project"]);
   }
 }
 
-
+if ($allErr == 0) { //if new message is being added
+   echo $allErr;
 }
 
 function test_input($data) {
@@ -98,7 +93,7 @@ echo $sector;
 echo "<br>";
 echo $project;
 echo "<br>";
-echo $all;
+echo $allErr;
 ?>
 
 </body>
