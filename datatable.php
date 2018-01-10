@@ -99,6 +99,8 @@ if ($result = $mysqli->query($strsql)) {
                 <input type = "text" style = "width:100%" name = "message" autofocus onchange="saveChange(this)" onkeydown="onKey(event)"></input>
                 </td>
                 <td>
+                    <button class = "mybutton" type = "submit">Add New Message</button><td></tr>
+
                 </td> 
             </form>
         </tr>
