@@ -19,7 +19,7 @@
  */
 body,html {
 	background-color: #3b4b54;
-	max-width: 1000px;
+	max-width: 1500px;
 	height: 100%;
 	margin: 0 auto;
 	font-family: "HelveticaNeue-Light", "Helvetica Neue Light",
@@ -43,6 +43,17 @@ a:hover {
 	margin: 0 auto;
 	padding-bottom: 2em;
 }
+
+
+.graphIcon {
+	padding-top: 10px;
+	display: block;
+	max-width: 1000px;
+	max-height: 1000px;
+	margin: 0 auto;
+	padding-bottom: 2em;
+}
+
 
 h1 {
 	font-weight: bold;
@@ -71,9 +82,18 @@ header,footer {
 }
 
 /* content width */
-.title,.tips,section,.records {
-	max-width: 600px;
+.title,.tips,section {
+	max-width: 1500px;
 }
+
+.records_val {
+	max-width: 1200px;
+}
+
+.records_pred {
+	max-width: 1000px;
+}
+
 
 @media ( max-width : 600px) {
 	.title,.tips,section {
@@ -86,7 +106,7 @@ header,footer {
 }
 
 /* alignment */
-.title,.tips,section,.records {
+.title,.tips,section,.records_val, .records_pred {
 	margin: 0 auto;
 }
 
@@ -96,8 +116,15 @@ header,footer {
 }
 
 td {
-	
+
 }
+
+th {
+	text-decoration: underline;
+	min-width: 50px;
+	word-wrap: break-word;	
+}
+
 /* background color */
 table {
 	
@@ -142,7 +169,7 @@ footer {
 }
 
 table {
-	table-layout: fixed;
+	table-layout: auto;
 	word-wrap: break-word;
 	position: relative;
 	border-collapse: collapse;
@@ -153,7 +180,7 @@ table {
 	padding: 5px;
 }
 
-.records input {
+.records_pred, .records_val {
 	border: 2px #00aed1 solid;
 	color: #fff;
     background: transparent;
